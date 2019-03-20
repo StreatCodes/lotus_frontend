@@ -6,6 +6,7 @@ import {Editor} from './editor/editor';
 global.html = html;
 global.lotusRegisterComponent = function(render, component) {
 	console.log(`Registering component ${component.name}`);
+	console.log(component);
 }
 
 render(html`<${Editor} />`, document.getElementById('lotus-app'));
