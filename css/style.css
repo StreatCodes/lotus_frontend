@@ -1,0 +1,79 @@
+* {
+	box-sizing: border-box;
+}
+
+.lotus-editor {
+	border: solid 2px #268fc9;
+	position: fixed;
+	border-radius: 2px;
+	box-shadow: 1px 1px 2px 1px #03030366;
+}
+
+.lotus-editor .lotus-header {
+	display: flex;
+	background-color: #268fc9;
+	cursor: all-scroll;
+	color: white;
+	padding: 4px;
+}
+
+.lotus-editor .lotus-body {
+	background-color: white;
+	padding: 4px;
+	color: #222;
+	min-width: 300px;
+}
+
+.lotus-editor .lotus-tabs {
+	display: flex;
+	background-color: #eee;
+}
+
+.lotus-editor .lotus-tabs .lotus-tab {
+	padding-bottom: 4px;
+	margin: 4px 4px 0 4px;
+	border-bottom: solid 2px #aaa;
+	cursor: pointer;
+}
+
+.lotus-editor .lotus-tabs .lotus-tab.selected {
+	background-color: white;
+	border-bottom-color: #268fc9;
+	padding: 4px;
+	margin: 0;
+}
+
+#website {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cell {
+	height: 20px;
+	background-color: red;
+	display: block;
+	width: 100%;
+}
+
+label > p {
+	margin: 0;
+}
+
+textarea {
+	width: 100%;
+	resize: vertical;
+}
+
+.loading-ring {
+	display: block;
+	margin: 20px auto;
+	stroke: black;
+	fill: transparent;
+}
+
+.loading-ring > text {
+	font-family: Arial, Helvetica, sans-serif;
+	stroke: transparent;
+	fill: black;
+	font-size: 24px;
+}

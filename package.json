@@ -1,0 +1,19 @@
+{
+  "name": "lotus_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --display-modules --watch --mode development --devtool source-map ./src/index.js",
+    "prod": "webpack --display-modules --mode production ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clsx": "^1.0.3",
+    "htm": "^2.1.1",
+    "preact": "^8.4.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
