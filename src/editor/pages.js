@@ -13,6 +13,14 @@ const PAGES = [
 export class Pages extends Component {
 	constructor() {
 		super();
+
+		this.state = {
+			selectedPage: null
+		}
+	}
+
+	setPage(page) {
+
 	}
 
 	renderPages(parentID) {
@@ -22,7 +30,7 @@ export class Pages extends Component {
 			const children = this.renderPages(page.id);
 
 			return html`<div class="page" id="page-${page.id}">
-				<span>${page.title}</span>
+				<span onclick=${e => this.setState({selectedPage: page})}>${page.title}</span>
 				${children}
 			</div>`;
 		});
@@ -32,6 +40,7 @@ export class Pages extends Component {
 		const pages = this.renderPages(null);
 
 		return html`<div class="lotus-pages">
+			<div>${state.selectedPage !== null && state.selectedPage.title}</div>
 			<div class="lotus-pages-controls">
 				<input type="text" placeholder="Filter"/>
 				<button>Create</button>

@@ -24,6 +24,15 @@
 	min-width: 300px;
 }
 
+.lotus-editor .lotus-resize {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	cursor: se-resize;
+	width: 15px;
+	height: 15px;
+}
+
 .lotus-editor .lotus-tabs {
 	display: flex;
 	background-color: #eee;
@@ -41,6 +50,15 @@
 	border-bottom-color: #268fc9;
 	padding: 4px;
 	margin: 0;
+}
+
+.lotus-editor .lotus-pages .page {
+	margin-left: 4px;
+	cursor: pointer;
+}
+
+.lotus-editor .lotus-pages .page>span:hover {
+	color: #268fc9;
 }
 
 #website {
