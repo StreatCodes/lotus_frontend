@@ -1,5 +1,7 @@
 import { html, Component } from 'htm/preact/standalone.mjs'
 
+import { Page } from './page';
+
 const PAGES = [
 	{id: 1, title: 'Home', parent: null},
 	{id: 2, title: 'Develop', url: 'develop', parent: null},
@@ -19,10 +21,6 @@ export class Pages extends Component {
 		}
 	}
 
-	setPage(page) {
-
-	}
-
 	renderPages(parentID) {
 		const relevantPages = PAGES.filter(page => page.parent === parentID);
 
@@ -38,6 +36,10 @@ export class Pages extends Component {
 
 	render(props, state) {
 		const pages = this.renderPages(null);
+
+		if(state.selectedPage !== null) {
+			return html`<${Page} />`;
+		}
 
 		return html`<div class="lotus-pages">
 			<div>${state.selectedPage !== null && state.selectedPage.title}</div>
