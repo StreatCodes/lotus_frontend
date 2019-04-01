@@ -7,10 +7,10 @@ const component = {
 	}
 }
 
-function render(props) {
+component.render = function(props) {
 	return html`
 		<h1>${props.content}</h1>
 	`;
 }
 
-lotusRegisterComponent(render, component);
+lotusRegisterComponent(component);

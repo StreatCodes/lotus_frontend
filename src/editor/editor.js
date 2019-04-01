@@ -6,6 +6,10 @@ import {SiteSettings} from './site-settings';
 import {Pages} from './pages';
 import {Stats} from './stats';
 
+const COMPONENT_LIST = [
+	'/component/text.js'
+]
+
 export class Editor extends Component {
 	constructor() {
 		super();
@@ -33,8 +37,8 @@ export class Editor extends Component {
 
 	loadComponents() {
 		const components = [];
-		for(let i = 0; i < 1000; i++) {
-			components.push('/component/text.js');
+		for(const component of COMPONENT_LIST) {
+			components.push(component);
 		}
 		let componentsLoaded = 0;
 		
