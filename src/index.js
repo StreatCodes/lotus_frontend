@@ -1,4 +1,5 @@
-import { render, html, Component } from 'htm/preact/standalone.mjs';
+import { render } from 'preact';
+import html from './html';
 
 import {Editor} from './editor/editor';
 
@@ -11,4 +12,3 @@ global.lotusRegisterComponent = function(component) {
 }
 
 render(html`<${Editor} />`, document.getElementById('lotus-app'));
-

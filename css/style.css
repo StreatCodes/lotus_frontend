@@ -96,7 +96,7 @@ textarea {
 }
 
 .lotus-grid{display: flex; flex-flow: row wrap;}
-.lotus-grid > div {
+.lotus-editor .lotus-grid > div {
 	background-color: #268fc9;
 	padding: 4px;
 	color: white;

@@ -1,4 +1,5 @@
-import { html, Component } from 'htm/preact/standalone.mjs'
+import { Component } from 'preact';
+import html from '../html';
 
 export class LoadingRing extends Component {
 	constructor() {

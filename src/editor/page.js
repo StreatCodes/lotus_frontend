@@ -1,4 +1,5 @@
-import { render, html, Component } from 'htm/preact/standalone.mjs'
+import { Component, render, Fragment } from 'preact';
+import html from '../html';
 
 const PAGE = [
 	{id: 1, page_id: 2, url: 'github.com/StreatCodes/sample-component', width: 4, title: 'Home', props: {content: 'Hello'}},
@@ -22,22 +23,29 @@ export class Page extends Component {
 		//insert a lotus id so we can track it more easily
 		const components = PAGE.map(component => {
 			const comp = global.components[component.url].render(component.props);
-			if(comp.attributes === undefined) {
-				comp.attributes = {};
+			
+			comp.props['lotus-id'] = component.id;
+
+			//Add grid cell class
+			if(comp.props.class === undefined) {
+				comp.props.class = '';
 			}
-			comp.attributes.id = 'lotus-element-'+component.id;
+			const classList = comp.props.class.split(' ');
+			classList.push('lotus-cell-'+component.width);
+			comp.props.class = classList.join(' ').trim();
+			
 			return comp;
 		});
 
-		render(html`<div>${components}</div>`, document.getElementById('website'));
+		render(html`<${Fragment}>${components}<//>`, document.getElementById('website'));
 	}
 
 	highlightComponent(id) {
-		document.getElementById('lotus-element-'+id).classList.add('lotus-highlight');
+		document.querySelector(`[lotus-id="${id}"]`).classList.add('lotus-highlight');
 	}
 
 	unHighlightComponent(id) {
-		document.getElementById('lotus-element-'+id).classList.remove('lotus-highlight');
+		document.querySelector(`[lotus-id="${id}"]`).classList.remove('lotus-highlight');
 	}
 
 	render(props, state) {
